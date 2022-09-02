@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,21 @@ export class LoginPage implements OnInit {
     username: '',
     password: ''
   }
-  constructor() { }
+  constructor(private router: Router) { }
   onSubmit() {
-    console.log(this.user)
+    if(this.user.username === 'admin' && this.user.password === 'admin') {
+      console.log('Welcome');
+      let navigationExtras:NavigationExtras = {
+        state: {
+          usuario: this.user
+    }
+  }
+  this.router.navigate(['main'], navigationExtras);
+  console.log(navigationExtras);
+}
+    else {
+      console.log('Invalid');
+    }
   }
   ngOnInit() {
   }
