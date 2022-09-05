@@ -25,7 +25,8 @@ export class MainPage implements OnInit {
   } 
 
   logout() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
+
   }
 
   ngOnInit() {
