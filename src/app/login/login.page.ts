@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginPage implements OnInit {
   }
   constructor(
     private router: Router,
+    private loadingCtrl: LoadingController
     ) {}
   onSubmit() {
     if(this.user.username === 'admin' && this.user.password === 'admin') {
@@ -28,6 +30,13 @@ export class LoginPage implements OnInit {
     else {
       console.log('Invalid');
     }
+  }
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando...',
+      duration: 2000
+    });
+    await loading.present();
   }
   ngOnInit() {
   }
