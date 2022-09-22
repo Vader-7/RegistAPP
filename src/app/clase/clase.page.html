@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar clase</ion-title>
+    <ion-icon class="ion-padding" name="newspaper" size="medium" slot="end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>
+      <h2>Listado de clases</h2>
+      <br>
+    </ion-label>
+  </ion-item>
+  <ion-button (click)="agregarClase()" size="block">
+    <br>
+    <ion-icon name="add-circle"></ion-icon></ion-button>
+  <ion-list *ngFor="let item of list" color="primary">
+    <ion-item>
+      <ion-button expand="block" (click)="setOpen(true)">
+        Inicio: {{item}}
+      </ion-button>
+      <ion-modal [isOpen]="isModalOpen"><ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Modal</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-item>
+              <ion-avatar slot="start">
+                <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+              </ion-avatar>
+              <ion-label>
+                Avatar Item
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+              </ion-avatar>
+              <ion-label>
+                Avatar Item
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+              </ion-avatar>
+              <ion-label>
+                Avatar Item
+              </ion-label>
+            </ion-item>
+                                    
+          </ion-content>
+        </ng-template>
+      </ion-modal></ion-modal>
+      </ion-item>
+  </ion-list>
+</ion-content>

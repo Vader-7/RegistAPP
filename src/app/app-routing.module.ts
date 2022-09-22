@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'lista',
     loadChildren: () => import('./lista/lista.module').then( m => m.ListaPageModule)
   },
+  {
+    path: 'clase',
+    loadChildren: () => import('./clase/clase.module').then( m => m.ClasePageModule)
+  },
 ];
 @NgModule({
   imports: [
