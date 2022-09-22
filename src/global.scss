@@ -24,9 +24,15 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@font-face {
+  font-family: 'PPNeueMachina';
+  src: url('./assets/fonts/PPNeueMachina-PlainRegular.otf');
+}
 @media (prefers-color-scheme: dark) {
     :root {
       background-color: rgb(85, 85, 85);
+
   }
   
   /* Fallback for older browsers or manual mode */
@@ -35,4 +41,7 @@
     
     background-color: rgb(85, 85, 85);
   }
+}
+:root{
+    --ion-font-family: 'JetBrains Mono', monospace;
 }

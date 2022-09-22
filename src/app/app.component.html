@@ -1,21 +1,24 @@
 <ion-app>
   <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar>
         <ion-title></ion-title>
-        <ion-icon slot="end" name="close" size="large" class="ion-padding" (click)="closeMenu()"></ion-icon>
+        <ion-icon slot="end" name="close-circle" size="large" class="ion-padding" (click)="closeMenu()"></ion-icon>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
+        <br>
         <ion-item detail routerLink="/listas" (click)="closeMenu()">
           <ion-icon slot="start" name="people"></ion-icon>
           Lista de asistencia
         </ion-item>
+        <br>
         <ion-item detail routerLink="/qr-scanner" (click)="closeMenu()">
           <ion-icon slot="start" name="qr-code"></ion-icon>
           Tomar asistencia
         </ion-item>
+        <br>
         <ion-item detail routerLink="/tabs" (click)="logout()">
           <ion-icon slot="start" name="exit"></ion-icon>
           Salir

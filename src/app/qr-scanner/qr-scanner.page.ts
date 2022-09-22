@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
-
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-qr-scanner',
@@ -9,9 +9,19 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 })
 export class QrScannerPage implements OnInit {
   codigo: any;
-  constructor(private barcodeScanner: BarcodeScanner) { }
+  constructor(
+    private barcodeScanner: BarcodeScanner,
+    private loadingCtrl: LoadingController
+    ) { }
   ngOnInit(){
 
+  }
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando...',
+      duration: 2000
+    });
+    await loading.present();
   }
 
   scan() {
