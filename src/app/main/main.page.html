@@ -1,14 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title></ion-title>
+    <ion-icon name="menu" slot="start" (click)="openMenu()" size="large" class="ion-padding"></ion-icon>  
+    <ion-title>
+    </ion-title>
     <ion-text slot="end">
       {{username}}
-      <ion-icon name="person"></ion-icon>
     </ion-text>
-    <ion-button (click)="logout()">Logout</ion-button>  
+      <ion-icon name="person" slot="end" (click)="logout()" size="medium" class="ion-padding"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content class="ion-padding">
-<h1>Welcome</h1>
+<h1>Hello World!</h1>
 </ion-content>

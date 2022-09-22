@@ -24,3 +24,15 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@media (prefers-color-scheme: dark) {
+    :root {
+      background-color: rgb(85, 85, 85);
+  }
+  
+  /* Fallback for older browsers or manual mode */
+  body.dark {
+    /* Dark mode variables go here */
+    
+    background-color: rgb(85, 85, 85);
+  }
+}

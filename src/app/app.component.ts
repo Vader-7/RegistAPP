@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private menuCtrl: MenuController
+  ) {}
+  closeMenu() {
+    this.menuCtrl.close('first');
+  }
+  logout() {
+    this.menuCtrl.close('first');
+    return window.location.href = '/home';
+  }
 }

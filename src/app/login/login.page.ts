@@ -11,7 +11,9 @@ export class LoginPage implements OnInit {
     username: '',
     password: ''
   }
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    ) {}
   onSubmit() {
     if(this.user.username === 'admin' && this.user.password === 'admin') {
       console.log('Welcome');

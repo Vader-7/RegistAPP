@@ -9,17 +9,18 @@
 <ion-content class="ion-padding">
   <form #miformulario="ngForm" (ngSubmit)="onSubmit()">
     <ion-item lines="full">
-      <ion-label position="floating">Name</ion-label>
+      <ion-label position="floating">Nombre</ion-label>
       <ion-input type="text" required name="username" [(ngModel)]="user.username" clearInput=""></ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">Contraseña</ion-label>
       <ion-input type="password" required name="password" [(ngModel)]="user.password" clearInput=""></ion-input>
     </ion-item>
     <ion-row>
       <ion-col>
         <ion-button type="submit" color="danger" [disabled]="miformulario.invalid" expand="block">Sign In</ion-button>
-        <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
+        <br>
+        <a [routerLink]="['/forgot-password']" class="small-text">¿Olvidaste la contraseña?</a>
       </ion-col>
     </ion-row>
   </form>

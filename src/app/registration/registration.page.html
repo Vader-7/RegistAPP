@@ -3,17 +3,17 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Register</ion-title>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
   <form>
     <ion-item lines="full">
-      <ion-label position="floating">First name</ion-label>
+      <ion-label position="floating">Nombre</ion-label>
       <ion-input type="text" required></ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Last name</ion-label>
+      <ion-label position="floating">Apellido</ion-label>
       <ion-input type="text" required></ion-input>
     </ion-item>
     <ion-item lines="full">
@@ -21,12 +21,16 @@
       <ion-input type="text" required></ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">Contraseña</ion-label>
       <ion-input type="password" required></ion-input>
     </ion-item>
     <ion-row>
+      <ion-item>
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>Acepto los terminos y condiciones.</ion-label>
+      </ion-item>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Sign Up</ion-button>
+        <ion-button type="submit" color="danger" expand="block">Confirmar</ion-button>
       </ion-col>
     </ion-row>
   </form>

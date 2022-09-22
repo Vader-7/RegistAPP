@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +12,8 @@ export class MainPage implements OnInit {
 
   constructor(
     private router: Router,
-    private activatedRouter: ActivatedRoute
+    private activatedRouter: ActivatedRoute,
+    private menuCtrl: MenuController
   ) { 
     this.activatedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
@@ -21,14 +22,19 @@ export class MainPage implements OnInit {
         console.log(data);
         this.username = data.username;
       }
-    });
+    })
   } 
 
   logout() {
     this.router.navigate(['/home']);
 
   }
-
+  openMenu() {
+    this.menuCtrl.open('first');
+  }
+  closeMenu() {
+    this.menuCtrl.close('first');
+  }
   ngOnInit() {
   }
 
