@@ -31,7 +31,7 @@
 }
 @media (prefers-color-scheme: dark) {
     :root {
-      background-color: rgb(85, 85, 85);
+      --ion-background-color: rgb(85, 85, 85) !important;
 
   }
   
@@ -44,4 +44,5 @@
 }
 :root{
     --ion-font-family: 'JetBrains Mono', monospace;
+    --ion-background-color: rgb(230, 230, 230);
 }
