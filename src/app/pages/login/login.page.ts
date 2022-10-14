@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
 
   onSubmit()
   {
-    console.log(this.usuario);
+    console.log(this.usuario.name);
     this.logear();
     
   }

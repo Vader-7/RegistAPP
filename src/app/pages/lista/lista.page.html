@@ -9,21 +9,10 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-item>
-    <ion-label>
-      <h2>Asignaturas</h2>
-      <br>
-    </ion-label>
-  </ion-item>
-  <ion-button size="block" detail routerLink="/clase">
-    Programación orientada a objetos
-  </ion-button>
+  <ion-list *ngFor="let x of listadoAsignaturas">
+    <ion-item>
+      <ion-label>{{x}}</ion-label>
+    </ion-item>
+  </ion-list>
   <br>
-  <ion-button size="block" detail routerLink="/clase">
-    Programación de algoritmos
-  </ion-button>
-  <br>
-  <ion-button size="block" detail routerLink="/clase">
-    Programación de base de datos
-  </ion-button>
 </ion-content>

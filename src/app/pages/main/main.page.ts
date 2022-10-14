@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { User } from '../../interface/user';
 
 @Component({
   selector: 'app-main',
@@ -8,23 +10,33 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  username: string;
 
+  usuario:User={
+    name:'',
+    lastname:'',
+    email:'',
+    password:''
+  }
+  nombre: any;
   constructor(
     private router: Router,
     private activatedRouter: ActivatedRoute,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    private storage: Storage
   ) { 
     this.activatedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
-        this.activatedRouter = this.router.getCurrentNavigation().extras.state.usuario;
-        let data = this.router.getCurrentNavigation().extras.state.usuario;
-        console.log(data);
-        this.username = data.username;
+        this.usuario = this.router.getCurrentNavigation().extras.state.user;
+        console.log(this.usuario.name);
       }
     })
-  } 
-
+  };
+  ngOnInit() {
+    this.storage.get('usuario').then((val) => {
+      this.nombre = val;
+      console.log('Your name is', val);
+    });
+  }
   logout() {
     this.router.navigate(['/home']);
 
@@ -35,7 +47,6 @@ export class MainPage implements OnInit {
   closeMenu() {
     this.menuCtrl.close('first');
   }
-  ngOnInit() {
-  }
+  
+} 
 
-}
