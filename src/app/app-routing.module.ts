@@ -1,36 +1,44 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutorizarGuard } from './guards/autorizar.guard';
+import { FormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+
+  { path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'registration',
-    loadChildren: () => import('./registration/registration.module').then( m => m.RegistrationPageModule)
+    loadChildren: () => import('./pages/registration/registration-routing.module').then( m => m.RegistroPageRoutingModule)
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
   {
     path: 'main',
-    loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
+    loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule), canActivate: [AutorizarGuard]
   },
   {
     path: 'qr-scanner',
-    loadChildren: () => import('./qr-scanner/qr-scanner.module').then( m => m.QrScannerPageModule)
+    loadChildren: () => import('./pages/qr-scanner/qr-scanner.module').then( m => m.QrScannerPageModule)
   },
   {
     path: 'lista',
-    loadChildren: () => import('./lista/lista.module').then( m => m.ListaPageModule)
+    loadChildren: () => import('./pages/lista/lista.module').then( m => m.ListaPageModule), canActivate: [AutorizarGuard]
   },
   {
     path: 'clase',
-    loadChildren: () => import('./clase/clase.module').then( m => m.ClasePageModule)
+    loadChildren: () => import('./pages/clase/clase.module').then( m => m.ClasePageModule), canActivate: [AutorizarGuard]
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
 ];
 @NgModule({
