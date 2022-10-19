@@ -9,10 +9,20 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list *ngFor="let x of listadoAsignaturas">
-    <ion-item>
-      <ion-label>{{x}}</ion-label>
-    </ion-item>
+  <ion-list *ngFor="let item of listadoAsignaturas">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{item.nombreCurso}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <h4>ASISTENCIA: {{item.asistencia}}</h4>
+        </ion-item>
+        <ion-item>
+          <H4>SECCION:  {{item.seccion}}</H4>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
   <br>
 </ion-content>

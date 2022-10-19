@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { User } from '../../interface/user';
-import { RegistroAsist, Registros } from '../../interface/registro-asist';
+import { RegistroAsist } from '../../interface/registro-asist';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,8 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./lista.page.scss'],
 })
 export class ListaPage implements OnInit {
-  listadoAsignaturas: any [] = [];
-
+  listadoAsignaturas: RegistroAsist [] = [];
 
   constructor(
     private storage: Storage,
@@ -25,9 +24,7 @@ export class ListaPage implements OnInit {
 
   async getValues() {
     await this.storage.get('registros').then((val) => {
-      for(let i = 0; i < val.length; i++){
-        this.listadoAsignaturas.push(val[i]);
-      }
+      this.listadoAsignaturas = val;
     }
     );
     console.log(this.listadoAsignaturas);
