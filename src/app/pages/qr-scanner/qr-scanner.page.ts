@@ -21,7 +21,7 @@ export class QrScannerPage implements OnInit {
     asistencia: 0,
     seccion: ''
   }
-  cursoEstudiante: any [] = [];
+  cursoEstudiante: RegistroAsist [] = [];
 
   constructor(
     private barcodeScanner: BarcodeScanner,
@@ -34,11 +34,6 @@ export class QrScannerPage implements OnInit {
       this.nombreAlumno = val;
       console.log('Your name is', val);
     });
-    this.storage.get('registros').then((val) => {
-      this.cursoEstudiante = val;
-      console.log('Your courses are ', val);
-    }
-    );
   }
   async showLoading() {
     const loading = await this.loadingCtrl.create({
@@ -49,24 +44,15 @@ export class QrScannerPage implements OnInit {
   }
 
   async test(){
-    this.nombreCur = 'Programacion';
+    this.nombreCur = 'Matematicas';
     console.log(this.cursoEstudiante.length);
-    if (this.cursoEstudiante.length == 0){
-      this.registro.nombreCurso = this.nombreCur;
-      this.registro.seccion = 'A';
-      this.registro.fecha = new Date();
-      this.registro.asistencia = 1;
-      console.log(this.registro);
-      this.cursoEstudiante.push(this.registro);
-      await this.storage.set('registros', this.cursoEstudiante);
-    }else{
+    if(this.cursoEstudiante.length != 0){
       for(let i = 0; i < this.cursoEstudiante.length; i++){
         if(this.cursoEstudiante[i].nombreCurso == this.nombreCur){
           this.cursoEstudiante[i].asistencia++;
           this.cursoEstudiante[i].fecha = new Date();
           console.log("Asistencia registrada");
-        }
-        else{
+        }else{
           this.registro.nombreCurso = this.nombreCur;
           this.registro.seccion = 'A';
           this.registro.fecha = new Date();
@@ -76,6 +62,14 @@ export class QrScannerPage implements OnInit {
           await this.storage.set('registros', this.cursoEstudiante);
         }
       }
+    }else{
+      this.registro.nombreCurso = this.nombreCur;
+      this.registro.seccion = 'A';
+      this.registro.fecha = new Date();
+      this.registro.asistencia = 1;
+      console.log(this.registro);
+      this.cursoEstudiante.push(this.registro);
+      await this.storage.set('registros', this.cursoEstudiante);
     }
     console.log(this.cursoEstudiante);
     await this.storage.set('registros', this.cursoEstudiante);
