@@ -23,7 +23,7 @@ export class ListaPage implements OnInit {
   }
 
   async getValues() {
-    await this.storage.get('registros').then((val) => {
+    await this.storage.get('registro').then((val) => {
       this.listadoAsignaturas = val;
     }
     );

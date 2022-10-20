@@ -12,27 +12,32 @@ import { Cursos, RegistroAsist } from '../../interface/registro-asist';
   styleUrls: ['./qr-scanner.page.scss'],
 })
 export class QrScannerPage implements OnInit {
-  nombreCur: string;
+  nombreCur: string = '';
   nombreAlumno: string;
-
-  registro: RegistroAsist = {
-    nombreCurso: '',
-    fecha: null, 
-    asistencia: 0,
-    seccion: ''
-  }
   cursoEstudiante: RegistroAsist [] = [];
-
+  
   constructor(
-    private barcodeScanner: BarcodeScanner,
     private loadingCtrl: LoadingController,
-    private router: Router,
     private storage: Storage
   ) { }
-  ngOnInit(){
-    this.storage.get('usuario').then((val) => {
+
+
+
+  async ngOnInit(){
+    await this.storage.get('usuario').then((val) => {
       this.nombreAlumno = val;
-      console.log('Your name is', val);
+    });
+    await this.storage.get('registro').then((val) => {
+      if (val !== null) {
+        for (let i = 0; i < val.length; i++) {
+          if (val[i].nombreCurso === undefined) {
+            this.storage.remove('registro');
+          }
+          else{
+            this.cursoEstudiante.push(val[i]);
+          }
+        }
+      }
     });
   }
   async showLoading() {
@@ -44,35 +49,37 @@ export class QrScannerPage implements OnInit {
   }
 
   async test(){
-    this.nombreCur = 'Matematicas';
-    console.log(this.cursoEstudiante.length);
-    if(this.cursoEstudiante.length != 0){
+    this.nombreCur = Math.round(Math.random() * 10) + '';
+    if(this.cursoEstudiante.length === 0){
+      let registro: RegistroAsist = {
+        nombreCurso: this.nombreCur,
+        fecha: new Date(),
+        asistencia: 1,
+        seccion: 'A'
+      }
+      this.cursoEstudiante.push(registro);
+      await this.storage.set('registro', this.cursoEstudiante);
+    }else{
       for(let i = 0; i < this.cursoEstudiante.length; i++){
         if(this.cursoEstudiante[i].nombreCurso == this.nombreCur){
-          this.cursoEstudiante[i].asistencia++;
+          this.cursoEstudiante[i].asistencia = this.cursoEstudiante[i].asistencia + 1;
           this.cursoEstudiante[i].fecha = new Date();
-          console.log("Asistencia registrada");
-        }else{
-          this.registro.nombreCurso = this.nombreCur;
-          this.registro.seccion = 'A';
-          this.registro.fecha = new Date();
-          this.registro.asistencia = 1;
-          console.log(this.registro);
-          this.cursoEstudiante.push(this.registro);
-          await this.storage.set('registros', this.cursoEstudiante);
+          await this.storage.set('registro', this.cursoEstudiante);
+          break;
+        }else if (this.cursoEstudiante[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.length - 1){
+          let registro2: RegistroAsist = {
+            nombreCurso: this.nombreCur,
+            fecha: new Date(),
+            asistencia: 1,
+            seccion: 'A'
+          }
+          this.cursoEstudiante.push(registro2);
+          await this.storage.set('registro', this.cursoEstudiante);
+          break;
         }
       }
-    }else{
-      this.registro.nombreCurso = this.nombreCur;
-      this.registro.seccion = 'A';
-      this.registro.fecha = new Date();
-      this.registro.asistencia = 1;
-      console.log(this.registro);
-      this.cursoEstudiante.push(this.registro);
-      await this.storage.set('registros', this.cursoEstudiante);
     }
     console.log(this.cursoEstudiante);
-    await this.storage.set('registros', this.cursoEstudiante);
   }
 }
   /*scan() {
