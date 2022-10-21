@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./lista.page.scss'],
 })
 export class ListaPage implements OnInit {
-  listadoAsignaturas: RegistroAsist [] = [];
+  listadoAsignaturas: any [] = [];
 
   constructor(
     private storage: Storage,
@@ -25,8 +25,13 @@ export class ListaPage implements OnInit {
   async getValues() {
     await this.storage.get('registro').then((val) => {
       this.listadoAsignaturas = val;
-    }
-    );
-    console.log(this.listadoAsignaturas);
+      console.log(this.listadoAsignaturas);
+      this.listadoAsignaturas.forEach(element => {
+          element.fecha = element.fecha.toLocaleString('default', ' ' + { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' } + ' ');
+        });
+    });
   }
 }
+
+
+  

@@ -14,7 +14,7 @@ import { Cursos, RegistroAsist } from '../../interface/registro-asist';
 export class QrScannerPage implements OnInit {
   nombreCur: string = '';
   nombreAlumno: string;
-  cursoEstudiante: RegistroAsist [] = [];
+  cursoEstudiante: any [] = [];
   
   constructor(
     private loadingCtrl: LoadingController,
@@ -62,8 +62,12 @@ export class QrScannerPage implements OnInit {
     }else{
       for(let i = 0; i < this.cursoEstudiante.length; i++){
         if(this.cursoEstudiante[i].nombreCurso == this.nombreCur){
+          let fechas = [];
           this.cursoEstudiante[i].asistencia = this.cursoEstudiante[i].asistencia + 1;
-          this.cursoEstudiante[i].fecha = new Date();
+          await this.storage.set('registro', this.cursoEstudiante);
+          fechas.push(this.cursoEstudiante[i].fecha);
+          fechas.push(new Date());
+          this.cursoEstudiante[i].fecha = fechas;
           await this.storage.set('registro', this.cursoEstudiante);
           break;
         }else if (this.cursoEstudiante[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.length - 1){

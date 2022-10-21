@@ -12,14 +12,17 @@
   <ion-list *ngFor="let item of listadoAsignaturas">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>{{item.nombreCurso}}</ion-card-title>
+        <ion-card-title>- {{item.nombreCurso}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
           <h4>ASISTENCIA: {{item.asistencia}}</h4>
         </ion-item>
         <ion-item>
-          <H4>SECCION:  {{item.seccion}}</H4>
+          <H4>SECCION: {{item.seccion}}</H4>
+        </ion-item>
+        <ion-item>
+          <H4>FECHAS: <br> {{item.fecha}}</H4>
         </ion-item>
       </ion-card-content>
     </ion-card>
