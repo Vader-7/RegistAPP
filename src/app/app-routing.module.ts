@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  { path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
+  { path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule), canActivate: [AutorizarGuard]},
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'qr-scanner',
-    loadChildren: () => import('./pages/qr-scanner/qr-scanner.module').then( m => m.QrScannerPageModule)
+    loadChildren: () => import('./pages/qr-scanner/qr-scanner.module').then( m => m.QrScannerPageModule), canActivate: [AutorizarGuard]
   },
   {
     path: 'lista',
@@ -42,7 +42,7 @@ const routes: Routes = [
   },
   {
     path: 'detalle',
-    loadChildren: () => import('./pages/detalle/detalle.module').then( m => m.DetallePageModule)
+    loadChildren: () => import('./pages/detalle/detalle.module').then( m => m.DetallePageModule), canActivate: [AutorizarGuard]
   },
 ];
 @NgModule({
