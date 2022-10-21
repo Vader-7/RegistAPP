@@ -56,37 +56,39 @@ export class QrScannerPage implements OnInit {
     }).catch(err => {
       console.log('Error', err);
     });
-    if(this.cursoEstudiante.length === 0 && this.nombreCur.length >= 5){
-      let registro: RegistroAsist = {
-        nombreCurso: this.nombreCur,
-        //push date to array
-        fecha: [new Date()],
-        asistencia: 1,
-        seccion: 'A'
-      }
-      this.cursoEstudiante.push(registro);
-      await this.storage.set('registro', this.cursoEstudiante);
-    }else{
-      for(let i = 0; i < this.cursoEstudiante.length; i++){
-        if(this.cursoEstudiante[i].nombreCurso == this.nombreCur){
-          this.cursoEstudiante[i].asistencia = this.cursoEstudiante[i].asistencia + 1;
-          this.cursoEstudiante[i].fecha.push(new Date());
-          await this.storage.set('registro', this.cursoEstudiante);
-          break;
-        }else if (this.cursoEstudiante[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.length - 1){
-          let registro2: RegistroAsist = {
-            nombreCurso: this.nombreCur,
-            fecha: [new Date()],
-            asistencia: 1,
-            seccion: 'A'
+    if(this.nombreCur.length >= 5){
+      if(this.cursoEstudiante.length === 0){
+        let registro: RegistroAsist = {
+          nombreCurso: this.nombreCur,
+          //push date to array
+          fecha: [new Date()],
+          asistencia: 1,
+          seccion: 'A'
+        }
+        this.cursoEstudiante.push(registro);
+        await this.storage.set('registro', this.cursoEstudiante);
+      }else{
+        for(let i = 0; i < this.cursoEstudiante.length; i++){
+          if(this.cursoEstudiante[i].nombreCurso == this.nombreCur){
+            this.cursoEstudiante[i].asistencia = this.cursoEstudiante[i].asistencia + 1;
+            this.cursoEstudiante[i].fecha.push(new Date());
+            await this.storage.set('registro', this.cursoEstudiante);
+            break;
+          }else if (this.cursoEstudiante[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.length - 1){
+            let registro2: RegistroAsist = {
+              nombreCurso: this.nombreCur,
+              fecha: [new Date()],
+              asistencia: 1,
+              seccion: 'A'
+            }
+            this.cursoEstudiante.push(registro2);
+            await this.storage.set('registro', this.cursoEstudiante);
+            break;
           }
-          this.cursoEstudiante.push(registro2);
-          await this.storage.set('registro', this.cursoEstudiante);
-          break;
         }
       }
+      console.log(this.cursoEstudiante);
     }
-    console.log(this.cursoEstudiante);
   }
 }
 //this.nombreCur = Math.round(Math.random() * 10) + '';
