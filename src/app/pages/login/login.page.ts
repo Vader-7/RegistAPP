@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { User } from '../../interface/user';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,10 @@ export class LoginPage implements OnInit {
     email:'',
     password:''
   }
-  constructor(private storage:Storage, private router:Router  ) { }
+  constructor(private storage:Storage, private router:Router,
+    private menuCtrl: MenuController) {
+    this.menuCtrl.enable(false);
+   }  
 
   ngOnInit() {
   }

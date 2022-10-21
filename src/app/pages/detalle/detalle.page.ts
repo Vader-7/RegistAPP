@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrosFec } from 'src/app/interface/registro-asist';
 import { Storage } from '@ionic/storage-angular';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -21,8 +22,9 @@ export class DetallePage implements OnInit {
   constructor(
     private storage: Storage,
     private router: Router,
-    private activatedRouter: ActivatedRoute
-  ) {   
+    private activatedRouter: ActivatedRoute,
+    private menuCtrl: MenuController) {
+    this.menuCtrl.enable(false);
     this.activatedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.fechas.nombreCurso = this.router.getCurrentNavigation().extras.state.id;

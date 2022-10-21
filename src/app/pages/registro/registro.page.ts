@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import { User } from './../../interface/user';
 
@@ -16,7 +17,11 @@ export class RegistroPage implements OnInit {
     password: '',
     
   }
-  constructor(private storage: Storage, private router:Router) { }
+  constructor(private storage: Storage, 
+    private router:Router,
+    private menuCtrl: MenuController) {
+      this.menuCtrl.enable(false);
+     }
 
   ngOnInit() { 
   }

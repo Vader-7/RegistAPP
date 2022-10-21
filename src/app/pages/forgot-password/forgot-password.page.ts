@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordPage implements OnInit {
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController) {
+    this.menuCtrl.enable(false);
+   }
 
   ngOnInit() {
   }
