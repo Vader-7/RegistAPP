@@ -56,7 +56,7 @@ export class QrScannerPage implements OnInit {
     }).catch(err => {
       console.log('Error', err);
     });
-    if(this.cursoEstudiante.length === 0 && this.nombreCur.length <= 5){
+    if(this.cursoEstudiante.length === 0 && this.nombreCur.length >= 5){
       let registro: RegistroAsist = {
         nombreCurso: this.nombreCur,
         //push date to array
