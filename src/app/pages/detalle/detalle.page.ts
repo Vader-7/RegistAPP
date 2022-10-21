@@ -33,7 +33,10 @@ export class DetallePage implements OnInit {
     this.storage.get('registro').then((val) => {
       for (let i = 0; i < val.length; i++) {
         if (val[i].nombreCurso === this.fechas.nombreCurso) {
-          this.fechas.fecha = val[i].fecha;
+          val[i].fecha.forEach(element => {
+            this.fecha = element.toLocaleString();
+            this.fechas.fecha.push(this.fecha);
+          });
           console.log(this.fechas.fecha);
         }
       }

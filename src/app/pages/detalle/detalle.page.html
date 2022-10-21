@@ -9,12 +9,12 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h1 class="ion-padding">{{fechas.nombreCurso}}</h1>
   <h3 class="ion-padding">REGISTROS:</h3>
   <ion-list *ngFor="let item of fechas.fecha">
     <ion-item>
       <ion-label>
-        <h4>{{item}}</h4>
+        <h2>{{item}}</h2>
+        <br>
       </ion-label>
     </ion-item>
   </ion-list>
