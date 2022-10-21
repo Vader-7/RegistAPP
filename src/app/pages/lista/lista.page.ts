@@ -27,8 +27,14 @@ export class ListaPage implements OnInit {
       this.listadoAsignaturas = val;
       console.log(this.listadoAsignaturas);
       this.listadoAsignaturas.forEach(element => {
-          element.fecha = element.fecha.toLocaleString('default', ' ' + { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' } + ' ');
-        });
+        if(element.fecha instanceof Array){
+          for(let i = 0; i < element.fecha.length; i++){
+            element.fecha[i] = '\n' + element.fecha[i].toLocaleString('default', ' ' + { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' } + ' ');
+          }
+        }else{
+          element.fecha = element.fecha.toLocaleString('default', { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' });
+        }
+      });
     });
   }
 }
