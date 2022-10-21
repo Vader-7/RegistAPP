@@ -31,6 +31,9 @@ export class MainPage implements OnInit {
       }
     })
   };
+  ionViewWillEnter() {
+    this.menuCtrl.enable(true);
+  }
   ngOnInit() {
     this.storage.get('usuario').then((val) => {
       this.nombre = val;

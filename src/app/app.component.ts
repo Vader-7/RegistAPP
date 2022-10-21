@@ -17,6 +17,9 @@ export class AppComponent {
     private menuCtrl: MenuController,
     private storage: Storage
   ) {}
+  ionViewWillEnter() {
+    this.menuCtrl.enable(true);
+  }
   async ngOnInit() {
     // If using a custom driver:
     //await this.storage.defineDriver(MyCustomDriver)

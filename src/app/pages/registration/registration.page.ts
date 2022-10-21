@@ -2,6 +2,7 @@ import { User } from './../../interface/user';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -18,12 +19,14 @@ export class RegistrationPage implements OnInit {
     password: '',
     
   }
-  constructor(private storage: Storage, private router:Router) { }
+  constructor(private storage: Storage, private router:Router, private menuCtrl: MenuController ) { }
 
   ngOnInit() { 
   }
 
-
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+  }
   onSubmit() {
     console.log(this.usuario);
     this.guardar();

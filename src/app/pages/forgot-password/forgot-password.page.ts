@@ -9,10 +9,12 @@ import { MenuController } from '@ionic/angular';
 export class ForgotPasswordPage implements OnInit {
 
   constructor(private menuCtrl: MenuController) {
-    this.menuCtrl.enable(false);
    }
 
   ngOnInit() {
+  }
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
   }
 
 }

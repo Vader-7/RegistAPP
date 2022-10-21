@@ -24,7 +24,6 @@ export class DetallePage implements OnInit {
     private router: Router,
     private activatedRouter: ActivatedRoute,
     private menuCtrl: MenuController) {
-    this.menuCtrl.enable(false);
     this.activatedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.fechas.nombreCurso = this.router.getCurrentNavigation().extras.state.id;
@@ -32,7 +31,9 @@ export class DetallePage implements OnInit {
       }
     })
   };
-
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+  }
   async ngOnInit() {
     this.storage.get('registro').then((val) => {
       for (let i = 0; i < val.length; i++) {

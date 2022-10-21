@@ -21,12 +21,15 @@ export class LoginPage implements OnInit {
   }
   constructor(private storage:Storage, private router:Router,
     private menuCtrl: MenuController) {
-    this.menuCtrl.enable(false);
    }  
 
   ngOnInit() {
   }
 
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+  }
+  
   onSubmit()
   {
     console.log(this.usuario.name);
