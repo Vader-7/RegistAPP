@@ -18,7 +18,7 @@ export class DetallePage implements OnInit {
   fecha: any;
   asistencia: number;
   progreso: number;
-  
+
   constructor(
     private storage: Storage,
     private router: Router,
