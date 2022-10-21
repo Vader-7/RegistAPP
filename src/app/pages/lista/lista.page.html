@@ -10,9 +10,10 @@
 
 <ion-content class="ion-padding">
   <ion-list *ngFor="let item of listadoAsignaturas">
+    <br>
     <ion-card>
       <ion-card-header>
-        <ion-card-title>- {{item.nombreCurso}}</ion-card-title>
+        <ion-card-title> - {{item.nombreCurso}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
@@ -22,8 +23,10 @@
           <H4>SECCION: {{item.seccion}}</H4>
         </ion-item>
         <ion-item>
-          <H4>FECHAS: <br> {{item.fecha}}</H4>
+          <H4>ULTIMO REGISTRO: {{item.fecha}} </H4>
         </ion-item>
+        <br>
+        <ion-button size="block" color="dark" (click)="goToDetail(item.nombreCurso)">DETALLE</ion-button>
       </ion-card-content>
     </ion-card>
   </ion-list>

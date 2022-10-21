@@ -53,7 +53,8 @@ export class QrScannerPage implements OnInit {
     if(this.cursoEstudiante.length === 0){
       let registro: RegistroAsist = {
         nombreCurso: this.nombreCur,
-        fecha: new Date(),
+        //push date to array
+        fecha: [new Date()],
         asistencia: 1,
         seccion: 'A'
       }
@@ -62,18 +63,14 @@ export class QrScannerPage implements OnInit {
     }else{
       for(let i = 0; i < this.cursoEstudiante.length; i++){
         if(this.cursoEstudiante[i].nombreCurso == this.nombreCur){
-          let fechas = [];
           this.cursoEstudiante[i].asistencia = this.cursoEstudiante[i].asistencia + 1;
-          await this.storage.set('registro', this.cursoEstudiante);
-          fechas.push(this.cursoEstudiante[i].fecha);
-          fechas.push(new Date());
-          this.cursoEstudiante[i].fecha = fechas;
+          this.cursoEstudiante[i].fecha.push(new Date());
           await this.storage.set('registro', this.cursoEstudiante);
           break;
         }else if (this.cursoEstudiante[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.length - 1){
           let registro2: RegistroAsist = {
             nombreCurso: this.nombreCur,
-            fecha: new Date(),
+            fecha: [new Date()],
             asistencia: 1,
             seccion: 'A'
           }

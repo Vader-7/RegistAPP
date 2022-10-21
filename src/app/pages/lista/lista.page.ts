@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { User } from '../../interface/user';
-import { RegistroAsist } from '../../interface/registro-asist';
+import { RegistroAsist, RegistrosFec } from '../../interface/registro-asist';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +11,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ListaPage implements OnInit {
   listadoAsignaturas: any [] = [];
-
   constructor(
     private storage: Storage,
     private router: Router,
@@ -28,14 +27,20 @@ export class ListaPage implements OnInit {
       console.log(this.listadoAsignaturas);
       this.listadoAsignaturas.forEach(element => {
         if(element.fecha instanceof Array){
-          for(let i = 0; i < element.fecha.length; i++){
-            element.fecha[i] = '\n' + element.fecha[i].toLocaleString('default', ' ' + { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' } + ' ');
-          }
-        }else{
-          element.fecha = element.fecha.toLocaleString('default', { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' });
+          //get the last element of the array
+          element.fecha = element.fecha[element.fecha.length - 1];
+          element.fecha = element.fecha.toDateString();
+        }
+        else{
+          element.fecha = element.fecha.toDateString();
         }
       });
     });
+  }
+  //give the name of the course to the next page
+  async goToDetail(id: string){
+    //navigation extras
+    this.router.navigate(['/detalle'], {state: {id: id}});
   }
 }
 
