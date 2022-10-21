@@ -15,6 +15,8 @@ export class DetallePage implements OnInit {
     fecha: []
   }
   fecha: any;
+  asistencia: number;
+  progreso: number;
   
   constructor(
     private storage: Storage,
@@ -37,9 +39,13 @@ export class DetallePage implements OnInit {
             this.fecha = element.toLocaleString();
             this.fechas.fecha.push(this.fecha);
           });
-          console.log(this.fechas.fecha);
+          this.asistencia = val[i].asistencia;
+          this.progreso = Math.round((this.asistencia / 10) * 100);
+          console.log(this.progreso);
         }
       }
+      var elem = document.getElementById("myBar");
+      elem.style.width = this.progreso + "%";
     });
   }
 }
