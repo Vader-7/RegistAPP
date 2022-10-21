@@ -18,7 +18,9 @@ export class QrScannerPage implements OnInit {
   
   constructor(
     private loadingCtrl: LoadingController,
-    private storage: Storage
+    private storage: Storage,
+    private router: Router,
+    private barcodeScanner: BarcodeScanner
   ) { }
 
 
@@ -49,8 +51,12 @@ export class QrScannerPage implements OnInit {
   }
 
   async test(){
-    this.nombreCur = Math.round(Math.random() * 10) + '';
-    if(this.cursoEstudiante.length === 0){
+    this.barcodeScanner.scan().then(barcodeData => {
+      this.nombreCur = barcodeData.text;
+    }).catch(err => {
+      console.log('Error', err);
+    });
+    if(this.cursoEstudiante.length === 0 && this.nombreCur !== ''){
       let registro: RegistroAsist = {
         nombreCurso: this.nombreCur,
         //push date to array
@@ -83,22 +89,5 @@ export class QrScannerPage implements OnInit {
     console.log(this.cursoEstudiante);
   }
 }
-  /*scan() {
-    this.barcodeScanner.scan().then(barcodeData => {
-    this.storage.set(this.registro.nombreCurso, barcodeData.text);
-    this.storage.get(this.registro.nombreCurso).then((val) => {
-      let nombre = val;
-      console.log('Your class is ', val);
-    });
-    this.storage.set(this.registro.fecha, new Date().toLocaleString());
-    this.storage.set('asistencia', +1);
-    this.regis.push(this.registro);
-    console.log('Asistencia registrada.');
-    this.router.navigate(['/main']);
-    for(let i = 0; i < this.regis.length; i++){
-      console.log(this.regis[i]);
-    }
-    }).catch(err => {
-      console.log('Error', err);
-    });
-  }/*/
+//this.nombreCur = Math.round(Math.random() * 10) + '';
+      

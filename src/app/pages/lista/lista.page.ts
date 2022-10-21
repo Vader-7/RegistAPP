@@ -29,10 +29,7 @@ export class ListaPage implements OnInit {
         if(element.fecha instanceof Array){
           //get the last element of the array
           element.fecha = element.fecha[element.fecha.length - 1];
-          element.fecha = element.fecha.toDateString();
-        }
-        else{
-          element.fecha = element.fecha.toDateString();
+          element.fecha = element.fecha.toLocaleString('default', { month: 'long' }) + " " + element.fecha.getDate();
         }
       });
     });

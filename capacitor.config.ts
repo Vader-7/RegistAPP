@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'hayashilabs.com',
   appName: 'Aunt',
   webDir: 'www',
   bundledWebRuntime: false
