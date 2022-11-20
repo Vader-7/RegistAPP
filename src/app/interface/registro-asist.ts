@@ -5,7 +5,8 @@ export interface RegistroAsist {
     seccion: string;
 }
 export interface Cursos {
-    cursos: RegistroAsist[];
+    cursos: RegistroAsist[],
+    nombre: any;
 }
 export interface RegistrosFec {
     nombreCurso: string;

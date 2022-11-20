@@ -32,7 +32,6 @@ export class LoginPage implements OnInit {
   
   onSubmit()
   {
-    console.log(this.usuario.name);
     this.logear();
   }
 
@@ -45,16 +44,16 @@ export class LoginPage implements OnInit {
         if(val[i].email == this.usuario.name && val[i].password == this.usuario.password)
         {
           this.storage.set('auth', true);
-          this.router.navigate(['/main']);
+          this.router.navigate(['/main'], {state: {user: this.usuario.name}});
         }
         else{
           this.storage.set('auth', false);
-          console.log("El usuario no existe");
+          console.log('Usuario o contraseña incorrectos');
         }
       }
     }
   }else{
-    console.log("El usuario no existe");
+    alert("El usuario no existe");
   }
     });
   }

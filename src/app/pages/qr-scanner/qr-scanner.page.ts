@@ -14,7 +14,10 @@ import { Cursos, RegistroAsist } from '../../interface/registro-asist';
 export class QrScannerPage implements OnInit {
   nombreCur: string = '';
   nombreAlumno: string;
-  cursoEstudiante: any [] = [];
+  cursoEstudiante: Cursos = {
+    cursos: [],
+    nombre: this.storage.get('activeUser')
+  };
   
   constructor(
     private loadingCtrl: LoadingController,
@@ -26,7 +29,7 @@ export class QrScannerPage implements OnInit {
 
 
   async ngOnInit(){
-    await this.storage.get('usuario').then((val) => {
+    await this.storage.get('activeUser').then((val) => {
       this.nombreAlumno = val;
     });
     await this.storage.get('registro').then((val) => {
@@ -36,7 +39,7 @@ export class QrScannerPage implements OnInit {
             this.storage.remove('registro');
           }
           else{
-            this.cursoEstudiante.push(val[i]);
+            this.cursoEstudiante.cursos.push(val[i]);
           }
         }
       }
@@ -57,7 +60,7 @@ export class QrScannerPage implements OnInit {
       console.log('Error', err);
     });
     if(this.nombreCur.length >= 5){
-      if(this.cursoEstudiante.length === 0){
+      if(this.cursoEstudiante.cursos.length === 0){
         let registro: RegistroAsist = {
           nombreCurso: this.nombreCur,
           //push date to array
@@ -65,23 +68,23 @@ export class QrScannerPage implements OnInit {
           asistencia: 1,
           seccion: 'A'
         }
-        this.cursoEstudiante.push(registro);
+        this.cursoEstudiante.cursos.push(registro);
         await this.storage.set('registro', this.cursoEstudiante);
       }else{
-        for(let i = 0; i < this.cursoEstudiante.length; i++){
+        for(let i = 0; i < this.cursoEstudiante.cursos.length; i++){
           if(this.cursoEstudiante[i].nombreCurso == this.nombreCur){
             this.cursoEstudiante[i].asistencia = this.cursoEstudiante[i].asistencia + 1;
             this.cursoEstudiante[i].fecha.push(new Date());
             await this.storage.set('registro', this.cursoEstudiante);
             break;
-          }else if (this.cursoEstudiante[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.length - 1){
+          }else if (this.cursoEstudiante[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.cursos.length - 1){
             let registro2: RegistroAsist = {
               nombreCurso: this.nombreCur,
               fecha: [new Date()],
               asistencia: 1,
               seccion: 'A'
             }
-            this.cursoEstudiante.push(registro2);
+            this.cursoEstudiante.cursos.push(registro2);
             await this.storage.set('registro', this.cursoEstudiante);
             break;
           }

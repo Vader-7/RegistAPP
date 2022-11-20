@@ -10,13 +10,6 @@ import { User } from '../../interface/user';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-
-  usuario:User={
-    name:'',
-    lastname:'',
-    email:'',
-    password:''
-  }
   nombre: any;
   constructor(
     private router: Router,
@@ -26,8 +19,8 @@ export class MainPage implements OnInit {
   ) { 
     this.activatedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
-        this.usuario = this.router.getCurrentNavigation().extras.state.user;
-        console.log(this.usuario.name);
+        this.nombre = this.router.getCurrentNavigation().extras.state.user;
+        this.storage.set('activeUser', this.nombre);
       }
     })
   };
@@ -35,10 +28,6 @@ export class MainPage implements OnInit {
     this.menuCtrl.enable(true);
   }
   ngOnInit() {
-    this.storage.get('usuario').then((val) => {
-      this.nombre = val;
-      console.log('Your name is', val);
-    });
   }
   logout() {
     this.router.navigate(['/home']);
