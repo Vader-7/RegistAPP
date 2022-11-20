@@ -29,6 +29,7 @@ export class AppComponent {
     this.menuCtrl.close('first');
   }
   logout() {
+    this.storage.set('auth', false);
     this.menuCtrl.close('first');
     return window.location.href = '/home';
   }

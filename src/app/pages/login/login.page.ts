@@ -11,7 +11,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  registrado: User = null;
+  registrado: any [] = [];
 
   usuario:User={
     name:'',
@@ -34,27 +34,28 @@ export class LoginPage implements OnInit {
   {
     console.log(this.usuario.name);
     this.logear();
-    
   }
 
   async logear()
   {
-    this.registrado = await this.storage.get(this.usuario.name);
-
-    if (this.registrado != null)
-    {
-      if(this.usuario.name == this.registrado.name && this.usuario.password == this.registrado.password)
+    await this.storage.get('users').then((val) => {
+      if(val instanceof Array){
+      for(let i=0; i<val.length; i++){
       {
-        console.log("Puede pasar");
-        this.storage.set('usuario',this.usuario.name);
-        this.router.navigate(['/main']);
-      }
-      else{
-        console.log("Usuario no existe!!!");
+        if(val[i].email == this.usuario.name && val[i].password == this.usuario.password)
+        {
+          this.storage.set('auth', true);
+          this.router.navigate(['/main']);
+        }
+        else{
+          this.storage.set('auth', false);
+          console.log("El usuario no existe");
+        }
       }
     }
-    else{
-      console.log("Pa la casa por agilao");
-    }
+  }else{
+    console.log("El usuario no existe");
+  }
+    });
   }
 }

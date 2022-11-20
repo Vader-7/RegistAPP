@@ -15,13 +15,15 @@ export class AutorizarGuard implements CanActivate {
     ) {}
 
   async autorizar() {
-    let check = await this.storage.get('usuario');
-    if(check != null){
+    let auth = false;
+    await this.storage.get('auth').then((val) => {
+      auth = val;
+    });
+    if (auth) {
       return true;
-    }else{
+    } else {
       this.router.navigate(['/home']);
     }
-    return false
   }
 
   canActivate(
