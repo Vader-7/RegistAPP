@@ -15,8 +15,8 @@ export class RegistroPage implements OnInit {
     lastname: '',
     email: '',
     password: '',
-    
   }
+  usuarios: any[] = [];
   constructor(private storage: Storage, 
     private router:Router,
     private menuCtrl: MenuController) {
@@ -28,22 +28,17 @@ export class RegistroPage implements OnInit {
   ionViewWillEnter() {
     this.menuCtrl.enable(false);
   }
-  onSubmit() {
+  async onSubmit() {
     console.log(this.usuario);
-    this.guardar();
+    await this.guardar();
   }
 
   async guardar() {
     let usr = await this.storage.get(this.usuario.name);
-
     if (usr == null) {
-      await this.storage.set(this.usuario.name, this.usuario);
-      console.log("Usuario registrado");
+      await this.usuarios.push(this.usuario);
+      await this.storage.set('usuarios', this.usuarios);
       this.router.navigate(['/login']);
-      
-    }
-    else{
-      console.log("Usuario ya existe");
     }
   }
 
