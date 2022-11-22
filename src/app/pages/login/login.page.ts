@@ -39,12 +39,13 @@ export class LoginPage implements OnInit {
   {
     await this.storage.get('users').then((val) => {
       if(val instanceof Array){
-      for(let i=0; i<val.length; i++){
+      for(let i = 0; i < val.length; i++){
       {
-        if(val[i].email == this.usuario.name && val[i].password == this.usuario.password)
+        if(val[i].name == this.usuario.name && val[i].password == this.usuario.password)
         {
           this.storage.set('auth', true);
           this.router.navigate(['/main'], {state: {user: this.usuario.name}});
+          break;
         }
         else{
           this.storage.set('auth', false);

@@ -11,7 +11,6 @@ import { User } from '../../interface/user';
 })
 export class ForgotPasswordPage implements OnInit {
 
-  correo: User["email"] = null;
 
   usuario: User = {
     name: '',
@@ -33,15 +32,24 @@ export class ForgotPasswordPage implements OnInit {
     this.menuCtrl.enable(false);
   }
   async onSubmit(){
-    //check if email is valid
-    this.correo = await this.usuario.email;
-    if(this.correo != null){
-      console.log("Correo valido");
-      //send email with password
-
-    }
-    else{
-      console.log("Correo no valido");
-    }
+    await this.getValues();
+  }
+  async getValues() {
+    await this.storage.get('users').then((val) => {
+      if(val instanceof Array){
+        for(let i = 0; i < val.length; i++){
+          if(val[i].email == this.usuario.email){
+            this.usuario = val[i];
+            alert(this.usuario.password);
+            break;
+          }
+          else{
+            console.log('Correo no registrado');
+          }
+        }
+      }else{
+        alert("El usuario no existe");
+      }
+    });
   }
 }

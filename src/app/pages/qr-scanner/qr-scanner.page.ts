@@ -14,10 +14,11 @@ import { Cursos, RegistroAsist } from '../../interface/registro-asist';
 export class QrScannerPage implements OnInit {
   nombreCur: string = '';
   nombreAlumno: string;
-  cursoEstudiante: Cursos = {
-    cursos: [],
-    nombre: this.storage.get('activeUser')
+  cursoEstudiante: any = {
+    cursos:/*  */ [],
+    nombre: ''
   };
+  cursos: any[] = [];
   
   constructor(
     private loadingCtrl: LoadingController,
@@ -33,14 +34,16 @@ export class QrScannerPage implements OnInit {
       this.nombreAlumno = val;
     });
     await this.storage.get('registro').then((val) => {
-      if (val !== null) {
+      if (val !== null ) {
         for (let i = 0; i < val.length; i++) {
-          if (val[i].nombreCurso === undefined) {
+          if (val[0][i].nombreCurso === undefined) {
             this.storage.remove('registro');
           }
-          else{
-            this.cursoEstudiante.cursos.push(val[i]);
+          else if (val[0][i].nombre === this.nombreAlumno) {
+            this.cursoEstudiante = val[0][i];
+            break;
           }
+
         }
       }
     });
@@ -54,13 +57,14 @@ export class QrScannerPage implements OnInit {
   }
 
   async test(){
-    this.barcodeScanner.scan().then(barcodeData => {
+    /*this.barcodeScanner.scan().then(barcodeData => {
       this.nombreCur = barcodeData.text;
     }).catch(err => {
       console.log('Error', err);
-    });
+    });*/
+    this.nombreCur = 'Matematicas' + Math.floor(Math.random() * 10);
     if(this.nombreCur.length >= 5){
-      if(this.cursoEstudiante.cursos.length === 0){
+      if(this.cursos.length === 0){
         let registro: RegistroAsist = {
           nombreCurso: this.nombreCur,
           //push date to array
@@ -69,27 +73,28 @@ export class QrScannerPage implements OnInit {
           seccion: 'A'
         }
         this.cursoEstudiante.cursos.push(registro);
-        await this.storage.set('registro', this.cursoEstudiante);
+        this.cursoEstudiante.nombre = this.nombreAlumno;
       }else{
         for(let i = 0; i < this.cursoEstudiante.cursos.length; i++){
-          if(this.cursoEstudiante[i].nombreCurso == this.nombreCur){
-            this.cursoEstudiante[i].asistencia = this.cursoEstudiante[i].asistencia + 1;
-            this.cursoEstudiante[i].fecha.push(new Date());
-            await this.storage.set('registro', this.cursoEstudiante);
+          if(this.cursoEstudiante.cursos[i].nombreCurso === this.nombreCur){
+            this.cursoEstudiante.cursos[i].asistencia = this.cursoEstudiante.cursos[i].asistencia + 1;
+            this.cursoEstudiante.cursos[i].fecha.push(new Date());
             break;
-          }else if (this.cursoEstudiante[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.cursos.length - 1){
-            let registro2: RegistroAsist = {
+          }else if (this.cursoEstudiante.cursos[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.cursos.length - 1){
+            console.log('No existe el curso');
+            let registro: RegistroAsist = {
               nombreCurso: this.nombreCur,
               fecha: [new Date()],
               asistencia: 1,
               seccion: 'A'
             }
-            this.cursoEstudiante.cursos.push(registro2);
-            await this.storage.set('registro', this.cursoEstudiante);
+            this.cursoEstudiante.cursos.push(registro);
             break;
           }
         }
       }
+      this.cursos.push(this.cursoEstudiante);
+      this.storage.set('registro', this.cursos);
       console.log(this.cursoEstudiante);
     }
   }
