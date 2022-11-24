@@ -15,7 +15,7 @@ export class QrScannerPage implements OnInit {
   nombreCur: string = '';
   nombreAlumno: string;
   cursoEstudiante: any = {
-    cursos:/*  */ [],
+    cursos: [],
     nombre: ''
   };
   cursos: any[] = [];
@@ -43,7 +43,6 @@ export class QrScannerPage implements OnInit {
             this.cursoEstudiante = val[0][i];
             break;
           }
-
         }
       }
     });
