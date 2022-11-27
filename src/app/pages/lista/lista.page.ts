@@ -17,13 +17,23 @@ export class ListaPage implements OnInit {
     private activatedRouter: ActivatedRoute
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.getValues();
   }
 
   async getValues() {
-    await this.storage.get('registro').then((val) => {
-      this.listadoAsignaturas = val;
+    await this.storage.get('cursos').then((val) => {
+      val.cursos.forEach(element => {
+        element.fecha = element.fecha[element.fecha.length - 1];
+        element.fecha = element.fecha.toLocaleString('default', { month: 'long' }) + " " + element.fecha.getDate();
+        this.listadoAsignaturas.push(element);
+      }
+      );
+      console.log(this.listadoAsignaturas);
+    });
+  }
+  /*
+      this.listadoAsignaturas = val[0].cursos;
       console.log(this.listadoAsignaturas);
       this.listadoAsignaturas.forEach(element => {
         if(element.fecha instanceof Array){
@@ -33,7 +43,7 @@ export class ListaPage implements OnInit {
         }
       });
     });
-  }
+  }*/
   //give the name of the course to the next page
   async goToDetail(id: string){
     //navigation extras

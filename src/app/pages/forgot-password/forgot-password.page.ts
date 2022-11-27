@@ -40,7 +40,7 @@ export class ForgotPasswordPage implements OnInit {
         for(let i = 0; i < val.length; i++){
           if(val[i].email == this.usuario.email){
             this.usuario = val[i];
-            alert(this.usuario.password);
+            alert('La contraseña es: ' + this.usuario.password);
             break;
           }
           else{

@@ -18,7 +18,6 @@ export class QrScannerPage implements OnInit {
     cursos: [],
     nombre: ''
   };
-  cursos: any[] = [];
   
   constructor(
     private loadingCtrl: LoadingController,
@@ -33,20 +32,33 @@ export class QrScannerPage implements OnInit {
     await this.storage.get('activeUser').then((val) => {
       this.nombreAlumno = val;
     });
-    await this.storage.get('registro').then((val) => {
-      if (val !== null ) {
-        for (let i = 0; i < val.length; i++) {
-          if (val[0][i].nombreCurso === undefined) {
-            this.storage.remove('registro');
-          }
-          else if (val[0][i].nombre === this.nombreAlumno) {
-            this.cursoEstudiante = val[0][i];
-            break;
-          }
-        }
-      }
-    });
+    await this.getCourses();
+    console.log(this.cursoEstudiante);
   }
+  //get courses from storage of the active user
+  async getCourses(){
+    await this.storage.get('cursos').then((val) => {
+      console.log(val);
+      val.forEach((element: { nombre: string; }) => {
+        if(element.nombre === this.nombreAlumno){
+          this.cursoEstudiante = element;
+          console.log(this.cursoEstudiante);
+        }else{
+          //create a new array for the new studdent and save it
+          this.cursoEstudiante = {
+            cursos: [],
+            nombre: this.nombreAlumno
+          }
+          this.storage.set('cursos', this.cursoEstudiante);
+        }
+    });
+  });
+}
+
+  ionwillleave(){
+    console.log('ionwillleave');
+  }
+
   async showLoading() {
     const loading = await this.loadingCtrl.create({
       message: 'Cargando...',
@@ -63,7 +75,7 @@ export class QrScannerPage implements OnInit {
     });*/
     this.nombreCur = 'Matematicas' + Math.floor(Math.random() * 10);
     if(this.nombreCur.length >= 5){
-      if(this.cursos.length === 0){
+      if(this.cursoEstudiante.cursos.length === 0){
         let registro: RegistroAsist = {
           nombreCurso: this.nombreCur,
           //push date to array
@@ -92,11 +104,11 @@ export class QrScannerPage implements OnInit {
           }
         }
       }
-      this.cursos.push(this.cursoEstudiante);
-      this.storage.set('registro', this.cursos);
+      this.storage.set('cursos', this.cursoEstudiante);
       console.log(this.cursoEstudiante);
     }
   }
 }
+
 //this.nombreCur = Math.round(Math.random() * 10) + '';
       

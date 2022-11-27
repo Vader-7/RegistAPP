@@ -35,18 +35,19 @@ export class DetallePage implements OnInit {
     this.menuCtrl.enable(false);
   }
   async ngOnInit() {
-    this.storage.get('registro').then((val) => {
-      for (let i = 0; i < val.length; i++) {
-        if (val[i].nombreCurso === this.fechas.nombreCurso) {
-          val[i].fecha.forEach(element => {
-            this.fecha = element.toLocaleString();
+    this.storage.get('cursos').then((val) => {
+      val.cursos.forEach(element => {
+        if(element.nombreCurso == this.fechas.nombreCurso) {
+          element.fecha.forEach(x => {
+            console.log(x);
+            this.fecha = x.toLocaleString();
             this.fechas.fecha.push(this.fecha);
           });
-          this.asistencia = val[i].asistencia;
+          this.asistencia = element.asistencia;
           this.progreso = Math.round((this.asistencia / 10) * 100);
           console.log(this.progreso);
         }
-      }
+      });
       var elem = document.getElementById("myBar");
       elem.style.width = this.progreso + "%";
     });
