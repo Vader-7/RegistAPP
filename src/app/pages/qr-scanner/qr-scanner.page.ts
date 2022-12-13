@@ -35,28 +35,23 @@ export class QrScannerPage implements OnInit {
     await this.getCourses();
     console.log(this.cursoEstudiante);
   }
-  //get courses from storage of the active user
+  //get courses from storage of the active user if there are any courses saved in the storage of the active user else create a new array of courses
   async getCourses(){
-    await this.storage.get('cursos').then((val) => {
-      console.log(val);
-      val.forEach((element: { nombre: string; }) => {
-        if(element.nombre === this.nombreAlumno){
-          this.cursoEstudiante = element;
-          console.log(this.cursoEstudiante);
-        }else{
-          //create a new array for the new studdent and save it
-          this.cursoEstudiante = {
-            cursos: [],
-            nombre: this.nombreAlumno
-          }
-          this.storage.set('cursos', this.cursoEstudiante);
-        }
+    await this.storage.get(this.nombreAlumno).then((val) => {
+      if(val === null){
+        this.cursoEstudiante.cursos = [];
+        this.cursoEstudiante.nombre = this.nombreAlumno;
+      }else{
+        this.cursoEstudiante = val;
+      }
     });
-  });
-}
+  }
+
+  
 
   ionwillleave(){
     console.log('ionwillleave');
+
   }
 
   async showLoading() {
@@ -95,20 +90,24 @@ export class QrScannerPage implements OnInit {
             console.log('No existe el curso');
             let registro: RegistroAsist = {
               nombreCurso: this.nombreCur,
+              //push date to array
               fecha: [new Date()],
               asistencia: 1,
               seccion: 'A'
             }
             this.cursoEstudiante.cursos.push(registro);
+            this.cursoEstudiante.nombre = this.nombreAlumno;
             break;
           }
         }
       }
-      this.storage.set('cursos', this.cursoEstudiante);
-      console.log(this.cursoEstudiante);
+      this.storage.set(this.nombreAlumno, this.cursoEstudiante);
+      this.router.navigate(['/lista']);
     }
   }
 }
+
+
 
 //this.nombreCur = Math.round(Math.random() * 10) + '';
       
