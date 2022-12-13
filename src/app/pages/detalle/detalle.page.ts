@@ -18,6 +18,8 @@ export class DetallePage implements OnInit {
   fecha: any;
   asistencia: number;
   progreso: number;
+  nombreAlumno: any;
+
 
   constructor(
     private storage: Storage,
@@ -35,7 +37,10 @@ export class DetallePage implements OnInit {
     this.menuCtrl.enable(false);
   }
   async ngOnInit() {
-    this.storage.get('cursos').then((val) => {
+    await this.storage.get('activeUser').then((val) => {
+      this.nombreAlumno = val;
+    });
+    this.storage.get(this.nombreAlumno).then((val) => {
       val.cursos.forEach(element => {
         if(element.nombreCurso == this.fechas.nombreCurso) {
           element.fecha.forEach(x => {
