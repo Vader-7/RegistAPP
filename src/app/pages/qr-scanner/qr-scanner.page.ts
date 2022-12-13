@@ -63,11 +63,8 @@ export class QrScannerPage implements OnInit {
   }
 
   async test(){
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.nombreCur = barcodeData.text;
-    }).catch(err => {
-      console.log('Error', err);
-    });
+  this.barcodeScanner.scan().then(barcodeData => {
+    this.nombreCur = barcodeData.text;
     if(this.nombreCur.length >= 5){
       if(this.cursoEstudiante.cursos.length === 0){
         let registro: RegistroAsist = {
@@ -85,8 +82,7 @@ export class QrScannerPage implements OnInit {
             this.cursoEstudiante.cursos[i].asistencia = this.cursoEstudiante.cursos[i].asistencia + 1;
             this.cursoEstudiante.cursos[i].fecha.push(new Date());
             break;
-          }else if (this.cursoEstudiante.cursos[i].nombreCurso !== this.nombreCur && i === this.cursoEstudiante.cursos.length - 1){
-            console.log('No existe el curso');
+          }else if(i === this.cursoEstudiante.cursos.length - 1){
             let registro: RegistroAsist = {
               nombreCurso: this.nombreCur,
               //push date to array
@@ -102,7 +98,12 @@ export class QrScannerPage implements OnInit {
       }
       this.storage.set(this.nombreAlumno, this.cursoEstudiante);
       this.router.navigate(['/lista']);
+    }else{
+      console.log('error');
     }
+  }).catch(err => {
+    console.log('Error', err);
+  });
   }
 }
 
