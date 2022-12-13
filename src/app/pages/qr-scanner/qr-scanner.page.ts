@@ -63,12 +63,11 @@ export class QrScannerPage implements OnInit {
   }
 
   async test(){
-    /*this.barcodeScanner.scan().then(barcodeData => {
+    this.barcodeScanner.scan().then(barcodeData => {
       this.nombreCur = barcodeData.text;
     }).catch(err => {
       console.log('Error', err);
-    });*/
-    this.nombreCur = 'Matematicas' + Math.floor(Math.random() * 10);
+    });
     if(this.nombreCur.length >= 5){
       if(this.cursoEstudiante.cursos.length === 0){
         let registro: RegistroAsist = {
