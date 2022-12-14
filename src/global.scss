@@ -44,5 +44,8 @@
 }
 :root{
     --ion-font-family: 'FiraCode', 'JetBrains Mono', monospace;
-    --ion-background-color: rgb(210, 210, 210);
+    --ion-background-color: rgb(234, 234, 234);
+}
+ion-card{
+  border-radius: 15px;
 }
