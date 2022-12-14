@@ -8,15 +8,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <br>
+<ion-content class="ion-padding">
   <ion-card>
     <ion-card-header>
-      <h4>Alumno: {{nombreAlumno}}</h4>
-      <h2 style="font-weight: bold;">Clase: {{nombreCur}}</h2>
+      <h5>NOMBRE: {{nombreAlumno}}</h5>
+      <h5 style="font-weight: bold;">ASIGNATURA: {{nombreCur}}</h5>
     </ion-card-header>
     <ion-card-content>
-      <img src="./assets/img/56d6af0d-7acc-4ec3-9c52-7cc10a37d583-1653636637866.jpg" alt="">
+      <img src="./assets/img/flat,1000x1000,075,f.jpg" alt="">
     </ion-card-content>
   </ion-card>
   <ion-button class="ion-padding" (click)="test(); showLoading()" size="block" style="height: 13%;" color="dark">Escanear código</ion-button>
