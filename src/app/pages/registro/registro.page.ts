@@ -17,12 +17,6 @@ export class RegistroPage implements OnInit {
     password: '',
   }
   usuarios: any[] = [];
-  user: User = {
-    name: '',
-    lastname: '',
-    email: '',
-    password: '',
-  }
 
   constructor(private storage: Storage, 
     private router:Router,
