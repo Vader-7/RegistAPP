@@ -48,8 +48,9 @@ export class RegistroPage implements OnInit {
       //validate if the user already exists
       if (this.usuarios.find((user) => user.name === this.usuario.name)) {
         alert('El usuario ya existe');
+      }
       //validate via regex if the name is valid
-      } else if (!this.usuario.name.match(/^[a-zA-Z]+$/)) {
+       if (!this.usuario.name.match(/^[a-zA-Z]+$/)) {
         alert('El nombre no es válido');
       //validate via regex if the lastname is valid
       } else if (!this.usuario.lastname.match(/^[a-zA-Z]+$/)) {
