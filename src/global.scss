@@ -27,7 +27,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @font-face {
   font-family: 'PPNeueMachina';
-  src: url('./assets/fonts/PPNeueMachina-PlainRegular.otf');
+  src: url('./assets/fonts/PPNeueMachina-PlainUltraBold.otf');
 }
 @font-face {
   font-family: 'FujiSans';
@@ -41,26 +41,23 @@
   font-family: 'PPNeueMontrealBold';
   src: url('./assets/fonts/PPNeueMontreal-Bold.otf');
 }
-@media (prefers-color-scheme: dark) {
-    :root {
-      --ion-background-color: rgb(85, 85, 85) !important;
-
-  }
-  
-  /* Fallback for older browsers or manual mode */
-  body.dark {
-    /* Dark mode variables go here */
-    
-    background-color: rgb(85, 85, 85);
-  }
-}
 :root{
     --ion-font-family: 'PPNeueMontreal';
-    --ion-background-color: rgb(234, 234, 234);
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
 }
 ion-card{
   border-radius: 15px;
 }
 ion-title{
   font-family: 'PPNeueMontrealBold';
+}
+h6{
+  font-family: 'PPNeueMontrealBold';
+}
+a{
+  color: black;
+}
+a :hover{
+  text-decoration: none;
 }

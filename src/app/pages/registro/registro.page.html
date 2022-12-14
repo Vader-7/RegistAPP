@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-text color="primary" class="ion-text-center">
-    <h4>Crear Cuenta</h4>
+  <ion-text color="dark" class="ion-text-center">
+    <h4 style="font-family: 'PPNeueMontrealBold';">Crear Cuenta</h4>
   </ion-text>
   <form #form="ngForm" (ngSubmit)="onSubmit()">
     <ion-item>
@@ -28,7 +28,7 @@
       <ion-label position="floating">Correo</ion-label>
       <ion-input type="email" name="mail" [(ngModel)]="usuario.email" required></ion-input>
     </ion-item>
-    <ion-button expand="full" color="success"
+    <ion-button expand="block" color="dark"
      type="submit" [disabled]="form.invalid" class="ion-margin-top">
       Crear cuenta
     </ion-button>
