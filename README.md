@@ -16,10 +16,15 @@
 ``` 
 npm install --save @ionic/angular
 npm start
+```
+</samp>
+&nbsp;
+<samp>
+
+``` 
 ionic serve
 ```
 </samp>
-
 <h1 align="center">
     <samp>Gallery</samp>
 </h1>
