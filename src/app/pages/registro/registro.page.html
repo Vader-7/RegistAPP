@@ -3,13 +3,12 @@
     <ion-buttons slot="start" mode="md">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <ion-text color="dark" class="ion-text-center">
-    <h4 style="font-family: 'PPNeueMontrealBold';">Crear Cuenta</h4>
+    <h4 style="font-family: 'PPNeueMontrealBold';">Create Account</h4>
   </ion-text>
   <form #form="ngForm" (ngSubmit)="onSubmit()">
     <ion-item>
@@ -30,7 +29,7 @@
     </ion-item>
     <ion-button expand="block" color="dark"
      type="submit" [disabled]="form.invalid" class="ion-margin-top">
-      Crear cuenta
+      OK
     </ion-button>
   </form>
 </ion-content>
