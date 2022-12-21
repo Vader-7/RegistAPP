@@ -36,7 +36,7 @@ ionic serve
 <h5 align="center">
     <samp>Check Attendance</samp>
 </h5>
-<img src="https://user-images.githubusercontent.com/66812754/208954478-33d47a3f-fa9e-483f-bbb4-156f27a6334c.png" alt="Re1" width="400" height="auto">
+<img src="https://user-images.githubusercontent.com/66812754/208954478-33d47a3f-fa9e-483f-bbb4-156f27a6334c.png" alt="Re1" width="400" height="auto" align="center">
 
 
 
