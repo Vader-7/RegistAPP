@@ -20,7 +20,6 @@ npm install --save @ionic/angular
 npm start
 ```
 </samp>
-&nbsp;
 <h5 align="center">
         <samp> – Then </samp>
     </h5>
