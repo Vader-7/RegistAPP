@@ -1,3 +1,14 @@
 ion-content{
-  --background: #ffffff;
+  --background: url('../../../assets/img/background0.png');
+}
+img{
+  width: 100%;
+  /*CENTER THE IMAGE*/
+  object-position: center;
+  /*MAKE THE IMAGE RESPONSIVE*/
+  object-fit: cover;
+  /* ADD vertical padding to the image */
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 15%;
 }

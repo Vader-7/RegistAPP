@@ -40,8 +40,8 @@ export class ForgotPasswordPage implements OnInit {
         for(let i = 0; i < val.length; i++){
           if(val[i].email == this.usuario.email){
             this.usuario = val[i];
-            //send email with the password
-            console.log('Correo enviado');
+            //send alert with the password
+            alert("Tu contraseña es: " + this.usuario.password);   
           }
           else{
             console.log('Correo no registrado');
