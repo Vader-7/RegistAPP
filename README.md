@@ -25,7 +25,8 @@ ionic serve
     <samp>Gallery</samp>
 </h1>
 
-![PortafolioIMG](https://user-images.githubusercontent.com/66812754/208838587-da9af350-6601-48a4-a53e-45dc66f3d832.jpg)
+![Re1](https://user-images.githubusercontent.com/66812754/208951286-ee01d160-611b-4ac0-8386-de0fcb1739d0.png)
+
 
 <h1 align="start">
     <samp>License</samp>
