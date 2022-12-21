@@ -1,7 +1,6 @@
 <h1 align="center">
-    <samp> RegistApp <a href="https://vader-7.github.io/Ty-Works/" target="_blank">
-        <img src="https://user-images.githubusercontent.com/66812754/208713388-aff1c2ca-eee3-4c98-bb3e-24c3bdbcb863.png" alt="Ty-Works" width="22px" height="22px">
-    </a></samp></samp>
+    <samp> <a href="https://vader-7.github.io/Ty-Works/" target="_blank">RegistApp</a>
+    </samp>
 </h1>
 
 <p align="center" >
