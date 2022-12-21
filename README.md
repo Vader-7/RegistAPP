@@ -13,7 +13,6 @@
 <h5 align="center">
         <samp> – First you need to </samp>
     </h5>
-&nbsp;
 <samp>
 
 ``` 
@@ -26,7 +25,6 @@ npm start
         <samp> – Then </samp>
     </h5>
 <samp>
-&nbsp;
 
 ``` 
 ionic serve
