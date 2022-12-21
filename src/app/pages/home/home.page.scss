@@ -8,10 +8,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  filter: blur(3px);
+  filter: blur(0px);
   z-index: -1;
 }
+ion-grid{
+  //center the grid
+  margin-left: auto;
+  margin-right: auto;
+  //add padding to the grid
+  padding-left: 10%;
+  padding-right: 10%;
+  //add padding to the top of the grid
+  padding-top: 15%;
+  //add padding to the bottom of the grid
+  padding-bottom: 10%;
 
+}
 img{
   width: 100%;
   /*CENTER THE IMAGE*/
@@ -19,8 +31,8 @@ img{
   /*MAKE THE IMAGE RESPONSIVE*/
   object-fit: cover;
   /* ADD vertical padding to the image */
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
   z-index: 1;
-  padding-top: 80%;
+  padding-top: 20%;
 }
