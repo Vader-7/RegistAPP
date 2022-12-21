@@ -25,7 +25,7 @@ ionic serve
     <samp>Gallery</samp>
 </h1>
 
-![Captura de pantalla 2022-12-21 a la(s) 12 58 20](https://user-images.githubusercontent.com/66812754/208950771-bc82a7fa-3865-4448-8819-01c0de3f4c63.png)
+![Re1](https://user-images.githubusercontent.com/66812754/208951286-ee01d160-611b-4ac0-8386-de0fcb1739d0.png)
 
 
 <h1 align="start">
