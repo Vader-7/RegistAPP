@@ -14,9 +14,9 @@
 
 ```
 
-  * npm install --save @ionic/angular
-  * npm start
-  * ionic serve
+  *npm install --save @ionic/angular
+  *npm start
+  *ionic serve
 
 ```
 </samp>
