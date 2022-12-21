@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Aunt</string>
+    <string name="title_activity_main">Aunt</string>
+    <string name="package_name">hayashilabs.com</string>
+    <string name="custom_url_scheme">hayashilabs.com</string>
+</resources>
