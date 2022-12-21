@@ -9,15 +9,14 @@
      App I made with <a href="https://ionicframework.com" target="_blank">IONIC</a> and <a href="https://angular.io" target="_blank">Angular</a>. The app is to mark attendance in a university, it has a login and register system, and a QR scanner to mark attendance of the student.
     </samp>
 </p>
-
+&nbsp;
+&nbsp;
 <samp>
 
-```
-
+``` 
 npm install --save @ionic/angular
 npm start
 ionic serve
-
 ```
 </samp>
 
