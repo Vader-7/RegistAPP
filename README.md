@@ -24,8 +24,8 @@ ionic serve
 <h1 align="center">
     <samp>Gallery</samp>
 </h1>
+![Captura de pantalla 2022-12-21 a la(s) 12 58 20](https://user-images.githubusercontent.com/66812754/208950771-bc82a7fa-3865-4448-8819-01c0de3f4c63.png)
 
-![PortafolioIMG](https://user-images.githubusercontent.com/66812754/208838587-da9af350-6601-48a4-a53e-45dc66f3d832.jpg)
 
 <h1 align="start">
     <samp>License</samp>
