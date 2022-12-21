@@ -60,6 +60,9 @@ ionic serve
 </h1>
 <p align="center">
  <samp>
+![Re1](https://user-images.githubusercontent.com/66812754/208987055-6c0da2b6-92ce-4357-90dc-5f49e02988c1.png)
+![Re2](https://user-images.githubusercontent.com/66812754/208987065-1bf26319-1af0-4347-ba7b-8e4a1bbcf0f0.png)
+![Re3](https://user-images.githubusercontent.com/66812754/208987075-278e9029-651c-4cbb-91c4-af7722fb64f0.png)
 
 [MIT License](LICENSE)
 </samp>
