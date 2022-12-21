@@ -27,6 +27,8 @@ ionic serve
 
 ![Re1](https://user-images.githubusercontent.com/66812754/208951286-ee01d160-611b-4ac0-8386-de0fcb1739d0.png)
 
+<img src="https://user-images.githubusercontent.com/66812754/208951286-ee01d160-611b-4ac0-8386-de0fcb1739d0.png" alt="Re1" width="200" height="400">
+
 
 <h1 align="start">
     <samp>License</samp>
