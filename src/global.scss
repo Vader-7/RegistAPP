@@ -43,8 +43,6 @@
 }
 :root{
     --ion-font-family: 'PPNeueMontreal';
-    --ion-background-color: #ffffff;
-    --ion-text-color: #000000;
 }
 ion-card{
   border-radius: 15px;
@@ -56,7 +54,7 @@ h6{
   font-family: 'PPNeueMontrealBold';
 }
 a{
-  color: black;
+  color: rgb(133, 133, 133);
   text-decoration-line: none;
 }
 a :hover{

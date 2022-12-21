@@ -3,25 +3,24 @@
     <ion-buttons slot="start" mode="md">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <form #miformulario="ngForm" (ngSubmit)="onSubmit()">
     <ion-item lines="full">
-      <ion-label position="floating">Nombre</ion-label>
+      <ion-label position="floating">User</ion-label>
       <ion-input type="text" required name="usuario" [(ngModel)]="usuario.name" clearInput=""></ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
+      <ion-label position="floating">Password</ion-label>
       <ion-input type="password" required name="password" [(ngModel)]="usuario.password" clearInput=""></ion-input>
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="dark" [disabled]="miformulario.invalid" expand="block">Entrar</ion-button>
+        <ion-button type="submit" color="dark" [disabled]="miformulario.invalid" expand="block">Log In</ion-button>
         <br>
-        <a [routerLink]="['/forgot-password']" class="small-text">¿Olvidaste la contraseña?</a>
+        <a [routerLink]="['/forgot-password']" class="small-text">¿Forgot password?</a>
       </ion-col>
     </ion-row>
   </form>
