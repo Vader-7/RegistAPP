@@ -1,5 +1,5 @@
 <h1 align="center">
-    <samp> <a href="https://vader-7.github.io/Ty-Works/" target="_blank" style="text-decoration: none">RegistApp</a>
+    <samp> <a href="https://vader-7.github.io/Ty-Works/" target="_blank">RegistApp</a>
     </samp>
 </h1>
 
