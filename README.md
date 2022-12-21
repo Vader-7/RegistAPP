@@ -7,7 +7,7 @@
     <samp>
      Welcome to my minimal attendance tracking app made with <a href="https://ionicframework.com" target="_blank">IONIC</a> and <a href="https://angular.io" target="_blank">Angular</a>. 
      </br>
-     The app is used to mark attendance at a university. It has a login and registration system, and a QR scanner for taking attendance. The app is simple to use; the QR code displays the name of the course and the app filters between users and courses.
+     The app is used to mark attendance at a university. It has a login and registration system, and a QR scanner for taking attendance. The app is simple to use; the teacher displays a QR code with the name of the course and the app filters between users and courses.
     </samp>
 </p>
 &nbsp;
