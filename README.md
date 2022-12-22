@@ -59,6 +59,9 @@ ionic serve
 </h1>
 <p align="center">
  <samp>
+![E1](https://user-images.githubusercontent.com/66812754/209049210-04c46b05-2a9b-4f92-a51a-8ae14fbf0e6f.png)
+![E2](https://user-images.githubusercontent.com/66812754/209049218-51d706cd-3802-48bc-9032-ceeb1d1d657e.png)
+![E3](https://user-images.githubusercontent.com/66812754/209049229-82782187-ee93-40a6-9ea7-241f0520c3fc.png)
 
 [MIT License](LICENSE)
 </samp>
