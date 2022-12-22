@@ -18,7 +18,6 @@
 
 ``` 
 npm install --save @ionic/angular
-
 ```
 </samp>
 <h5 align="center">

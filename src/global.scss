@@ -43,9 +43,13 @@
 }
 :root{
     --ion-font-family: 'PPNeueMontreal';
+    --ion-background-color: rgb(237, 237, 237);
 }
+
 ion-card{
   border-radius: 15px;
+  background-color: transparent;
+  box-shadow: none;
 }
 ion-title{
   font-family: 'PPNeueMontrealBold';
