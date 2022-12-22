@@ -59,9 +59,6 @@ ionic serve
 </h1>
 <p align="center">
  <samp>
-![E1]()
-![E2]()
-![E3]()
 
 [MIT License](LICENSE)
 </samp>
