@@ -10,8 +10,9 @@
     </samp>
 </p>
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/66812754/209456097-524ef295-e684-4b6d-bb93-ec7e6abf63c3.png" alt="Re1" width="70%" height="auto">
+    <img src="https://user-images.githubusercontent.com/66812754/209480094-a449dfa4-c103-47a8-a82c-0ad1b88596e4.png" alt="Re1" width="70%" height="auto">
 </p>
+
 &nbsp;
 <h1 align="center">
     <samp>Instructions</samp>
