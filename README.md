@@ -4,9 +4,7 @@
 </h1>
 
 <p align="center">
-    <samp>
-        <img src="https://user-images.githubusercontent.com/66812754/209455776-3e62ec61-5b60-4e5e-81c6-d9bb54ce1791.png" alt="Re1" width="400" height="auto">
-    </samp>
+    <img src="https://user-images.githubusercontent.com/66812754/209455776-3e62ec61-5b60-4e5e-81c6-d9bb54ce1791.png" alt="Re1" width="400" height="auto">
 </p>
 
 <p align="center" >
