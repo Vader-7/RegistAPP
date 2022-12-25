@@ -42,19 +42,19 @@ ionic serve
     <samp> – Log In</samp>
 </h5>
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/66812754/209476189-b6c012dd-74bd-460f-8222-d11e3a7fce82.png" alt="Re1" width="400" height="auto">
+    <img src="https://user-images.githubusercontent.com/66812754/209479993-0aa3dd11-7eb7-4dfb-9ae4-3cdbaff2276c.png" alt="Re1" width="400" height="auto">
 </p>
     <h5 align="center">
         <samp> – Scan QR</samp>
     </h5>
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/66812754/209049218-51d706cd-3802-48bc-9032-ceeb1d1d657e.png" alt="Re2" width="400" height="auto">
+    <img src="https://user-images.githubusercontent.com/66812754/209479997-2d4a08c6-fa06-47ee-a2a8-9ef16059f5ac.png" alt="Re2" width="400" height="auto">
 </p>
     <h5 align="center">
         <samp> – Check Attendance</samp>
     </h5>
 <p align="center">
-    <img align="center" src="https://user-images.githubusercontent.com/66812754/209049229-82782187-ee93-40a6-9ea7-241f0520c3fc.png" alt="Re3" width="400" height="auto">
+    <img align="center" src="https://user-images.githubusercontent.com/66812754/209479999-e944ee46-77cd-486b-847d-6ed0cafdc092.png" alt="Re3" width="400" height="auto">
 </p>
 
 <h1 align="start">
@@ -63,7 +63,6 @@ ionic serve
 </h1>
 <p align="center">
  <samp>
-
 [MIT License](LICENSE)
 </samp>
 </p>
