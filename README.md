@@ -61,7 +61,7 @@ ionic serve
 
 
 <h1 align="start">
-    <samp>License</samp>
+    <samp>LICENSE</samp>
     
 </h1>
 <p align="center">
