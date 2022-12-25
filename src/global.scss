@@ -45,6 +45,51 @@
     --ion-font-family: 'PPNeueMontreal';
     --ion-background-color: #d5d9e0;
 }
+/* lock light mode only */
+html {
+  --ion-background-color: #d5d9e0;
+  --ion-text-color: #000;
+  --ion-toolbar-background: #d5d9e0;
+  --ion-toolbar-color: #000;
+  --ion-toolbar-border-color: #000;
+  --ion-toolbar-border-style: solid;
+  --ion-toolbar-border-width: 1px;
+  --ion-toolbar-box-shadow: none;
+  --ion-toolbar-ios-border-radius: 0px;
+  --ion-toolbar-md-border-radius: 0px;
+  --ion-toolbar-padding-bottom: 0px;
+  --ion-toolbar-padding-top: 0px;
+  --ion-toolbar-padding-start: 0px;
+  --ion-toolbar-padding-end: 0px;
+  --ion-toolbar-md-padding-bottom: 0px;
+  --ion-toolbar-md-padding-top: 0px;
+  --ion-toolbar-md-padding-start: 0px;
+  --ion-toolbar-md-padding-end: 0px;
+  --ion-toolbar-ios-padding-bottom: 0px;
+  --ion-toolbar-ios-padding-top: 0px;
+  --ion-toolbar-ios-padding-start: 0px;
+  --ion-toolbar-ios-padding-end: 0px;
+  --ion-toolbar-item-ios-padding-bottom: 0px;
+  --ion-toolbar-item-ios-padding-top: 0px;
+  --ion-toolbar-item-ios-padding-start: 0px;
+  --ion-toolbar-item-ios-padding-end: 0px;
+  --ion-toolbar-item-md-padding-bottom: 0px;
+  --ion-toolbar-item-md-padding-top: 0px;
+  --ion-toolbar-item-md-padding-start: 0px;
+  --ion-toolbar-item-md-padding-end: 0px;
+  --ion-toolbar-item-padding-bottom: 0px;
+  --ion-toolbar-item-padding-top: 0px;
+  --ion-toolbar-item-padding-start: 0px;
+  --ion-toolbar-item-padding-end: 0px;
+  --ion-toolbar-item-ios-border-radius: 0px;
+  --ion-toolbar-item-md-border-radius: 0px;
+  --ion-toolbar-item-border-radius: 0px;
+  --ion-toolbar-item-ios-border-style: solid;
+  --ion-toolbar-item-ios-border-width: 1px;
+  --ion-toolbar-item-ios-border-color: #000;
+  --ion-toolbar-item-md-border-style: solid;
+  --ion-toolbar-item-md-border-width: 1
+}
 
 ion-button{
   font-family: 'PPNeueMontreal';
