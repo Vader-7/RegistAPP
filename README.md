@@ -57,9 +57,6 @@ ionic serve
     <img align="center" src="https://user-images.githubusercontent.com/66812754/209049229-82782187-ee93-40a6-9ea7-241f0520c3fc.png" alt="Re3" width="400" height="auto">
 </p>
 
-![RE1]()
-
-
 <h1 align="start">
     <samp>LICENSE</samp>
     
