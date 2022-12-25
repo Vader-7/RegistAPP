@@ -2,17 +2,15 @@
     <samp> <a href="https://vader-7.github.io/Ty-Works/" target="_blank">RegistApp</a>
     </samp>
 </h1>
-
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/66812754/209455776-3e62ec61-5b60-4e5e-81c6-d9bb54ce1791.png" alt="Re1" width="100%" height="auto">
-</p>
-
 <p align="center" >
     <samp>
      Welcome to my minimal attendance tracking app made with <a href="https://ionicframework.com" target="_blank">IONIC</a> and <a href="https://angular.io" target="_blank">Angular</a>. 
      </br>
      The app is used to mark attendance at a university. It has a login and registration system, and a QR scanner for taking attendance. The app is simple to use; the teacher displays a QR code with the name of the course and the app filters between users and courses.
     </samp>
+</p>
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/66812754/209455776-3e62ec61-5b60-4e5e-81c6-d9bb54ce1791.png" alt="Re1" width="100%" height="auto">
 </p>
 &nbsp;
 <h5 align="center">
