@@ -12,7 +12,8 @@
 <p align="center">
     <img src="https://user-images.githubusercontent.com/66812754/209455776-3e62ec61-5b60-4e5e-81c6-d9bb54ce1791.png" alt="Re1" width="100%" height="auto">
 </p>
-&nbsp;
+&nbsp;![iPhone 14 Pro Mockup1](https://user-images.githubusercontent.com/66812754/209456097-524ef295-e684-4b6d-bb93-ec7e6abf63c3.png)
+
 <h5 align="center">
         <samp> – First you need to </samp>
     </h5>
