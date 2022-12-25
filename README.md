@@ -42,7 +42,7 @@ ionic serve
     <samp> – Log In</samp>
 </h5>
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/66812754/209049210-04c46b05-2a9b-4f92-a51a-8ae14fbf0e6f.png" alt="Re1" width="400" height="auto">
+    <img src="https://user-images.githubusercontent.com/66812754/209456315-cb9163c5-cc96-450d-b173-ac532c5e90c9.png" alt="Re1" width="400" height="auto">
 </p>
     <h5 align="center">
         <samp> – Scan QR</samp>
