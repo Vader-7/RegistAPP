@@ -51,6 +51,7 @@ ionic serve
 <p align="center">
     <img align="center" src="https://user-images.githubusercontent.com/66812754/209049229-82782187-ee93-40a6-9ea7-241f0520c3fc.png" alt="Re3" width="400" height="auto">
 </p>
+![iPhone 14 Pro Mockup](https://user-images.githubusercontent.com/66812754/209455776-3e62ec61-5b60-4e5e-81c6-d9bb54ce1791.png)
 
 
 <h1 align="start">
