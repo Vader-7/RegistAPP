@@ -13,6 +13,9 @@
     <img src="https://user-images.githubusercontent.com/66812754/209456097-524ef295-e684-4b6d-bb93-ec7e6abf63c3.png" alt="Re1" width="70%" height="auto">
 </p>
 &nbsp;
+<h1 align="center">
+    <samp>Instructions</samp>
+</h1>
 <h5 align="center">
         <samp> – First you need to </samp>
     </h5>
