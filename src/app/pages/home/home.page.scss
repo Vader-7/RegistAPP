@@ -19,20 +19,24 @@ ion-grid{
   padding-left: 10%;
   padding-right: 10%;
   //add padding to the top of the grid
-  padding-top: 15%;
+  padding-top: 40%;
   //add padding to the bottom of the grid
   padding-bottom: 10%;
 
 }
-img{
+ion-content img{
   width: 100%;
+  /* put img at top of container */
+  object-position: top;
+  /* make img responsive */
+  object-fit: cover;
+  /* add vertical padding to the image */
   /*CENTER THE IMAGE*/
-  object-position: center;
+  object-position: top;
   /*MAKE THE IMAGE RESPONSIVE*/
   object-fit: cover;
   /* ADD vertical padding to the image */
   padding-left: 15%;
   padding-right: 15%;
   z-index: 1;
-  padding-top: 20%;
 }
