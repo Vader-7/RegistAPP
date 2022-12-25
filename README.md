@@ -10,7 +10,7 @@
     </samp>
 </p>
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/66812754/209456097-524ef295-e684-4b6d-bb93-ec7e6abf63c3.png" alt="Re1" width="100%" height="auto">
+    <img src="https://user-images.githubusercontent.com/66812754/209456097-524ef295-e684-4b6d-bb93-ec7e6abf63c3.png" alt="Re1" width="50%" height="auto">
 </p>
 &nbsp;
 <h5 align="center">
