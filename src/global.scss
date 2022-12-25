@@ -56,7 +56,10 @@ ion-button{
 ion-card{
   border-radius: 15px;
   background-color: transparent;
-  box-shadow: none;
+  box-shadow: rebeccapurple;
+}
+ion-button{
+  background-color: transparent;
 }
 ion-title{
   font-family: 'PPNeueMontrealBold';
