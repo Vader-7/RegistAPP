@@ -9,10 +9,6 @@
      The app is used to mark attendance at a university. It has a login and registration system, and a QR scanner for taking attendance. The app is simple to use; the teacher displays a QR code with the name of the course and the app filters between users and courses.
     </samp>
 </p>
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/66812754/209480094-a449dfa4-c103-47a8-a82c-0ad1b88596e4.png" alt="Re1" width="70%" height="auto">
-</p>
-
 &nbsp;
 <h1 align="center">
     <samp>Instructions</samp>
